@@ -15,21 +15,8 @@ else
     make install
     cd ..
 
-    wget http://www.mpfr.org/mpfr-3.1.4/mpfr-3.1.4.tar.bz2
-    tar -xf mpfr-3.1.4.tar.bz2
-    cd mpfr-3.1.4
-    ./configure --prefix=$BUILD_PREFIX --disable-static $PLATFORM_ARGS
-    make -j4 > /dev/null 2>&1
-    make install
-    cd ..
-
-    wget http://flintlib.org/flint-2.5.2.tar.gz
-    tar -xf flint-2.5.2.tar.gz
-    cd flint-2.5.2
-    ./configure --prefix=$BUILD_PREFIX --disable-static
-    make -j4 > /dev/null 2>&1
-    make install
-    cd ..
+    build_simple mpfr 3.1.4 http://www.mpfr.org/mpfr-3.1.4/
+    build_simple flint 2.5.2 http://flintlib.org/
 
     wget https://github.com/fredrik-johansson/arb/archive/2.11.1.tar.gz
     tar -xf arb-2.11.1.tar.gz
