@@ -6,7 +6,7 @@ function build_github {
     local path=$1
     local version=$2
     local configure_args=${@:3}
-    if [ -e "${path}-stamp" ]; then
+    if [ -e "${name}-stamp" ]; then
         return
     fi
     local name=`basename "$path"`
@@ -17,7 +17,7 @@ function build_github {
         && ./configure --prefix=$BUILD_PREFIX $configure_args \
         && make \
         && make install)
-    touch "${path}-stamp"
+    touch "${name}-stamp"
 }
 
 if [ -n "$IS_OSX" ]; then
