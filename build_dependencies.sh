@@ -19,7 +19,7 @@ else
     build_simple flint 2.5.2 http://flintlib.org/
 
     wget https://github.com/fredrik-johansson/arb/archive/2.11.1.tar.gz
-    tar -xf arb-2.11.1.tar.gz
+    tar -xf 2.11.1
     cd arb-2.11.1
     ./configure --prefix=$BUILD_PREFIX
     make -j4 > /dev/null 2>&1
