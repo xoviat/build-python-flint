@@ -10,7 +10,7 @@ function build_github {
         return
     fi
     local name_version="${path}-${version}"
-    local archive="${name_version}.tar.gz"
+    local archive="${path}/${version}.tar.gz"
     fetch_unpack "https://github.com/${path}/archive/${version}.tar.gz" $archive
     (cd $name_version \
         && ./configure --prefix=$BUILD_PREFIX $configure_args \
