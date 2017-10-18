@@ -9,8 +9,10 @@ function build_github {
     if [ -e "${path}-stamp" ]; then
         return
     fi
-    local name_version="${path}-${version}"
-    fetch_unpack "https://github.com/${path}/archive/${version}.tar.gz" || ls -r .
+    local name=`basename "$path"`
+    local name_version="${name}-${version}"
+    fetch_unpack "https://github.com/${path}/archive/${version}.tar.gz"
+    ls -r .
     (cd $name_version \
         && ./configure --prefix=$BUILD_PREFIX $configure_args \
         && make \
