@@ -2,6 +2,24 @@
 
 set -e -x
 
+function build_github {
+    local path=$1
+    local version=$2
+    local configure_args=${@:3}
+    if [ -e "${path}-stamp" ]; then
+        return
+    fi
+    local name=$(echo $STR | cut -f1 -d/)
+    local name_version="${name}-${version}"
+    local archive=${name_version}.tar.gz
+    fetch_unpack https://github.com/${name}/archive/$version.tar.gz $archive
+    (cd $name_version \
+        && ./configure --prefix=$BUILD_PREFIX $configure_args \
+        && make \
+        && make install)
+    touch "${path}-stamp"
+}
+
 if [ -n "$IS_OSX" ]; then
     HOMEBREW_NO_AUTO_UPDATE=1 brew install homebrew/science/arb
 else
@@ -17,14 +35,7 @@ else
 
     build_simple mpfr 3.1.4 http://www.mpfr.org/mpfr-3.1.4/
     build_simple flint 2.5.2 http://flintlib.org/
-
-    wget https://github.com/fredrik-johansson/arb/archive/2.11.1.tar.gz
-    tar -xf 2.11.1
-    cd arb-2.11.1
-    ./configure --prefix=$BUILD_PREFIX
-    make -j4 > /dev/null 2>&1
-    make install
-    cd ..
+    build_github fredrik-johansson/arb 2.11.1
 fi
 
 # Copy the flint headers
