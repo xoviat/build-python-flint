@@ -31,12 +31,13 @@ else
     make install
     cd ..
 
-    cd arb
+    wget https://github.com/fredrik-johansson/arb/archive/2.11.1.tar.gz
+    tar -xf arb-2.11.1.tar.gz
+    cd arb-2.11.1
     ./configure --prefix=$BUILD_PREFIX
-    make -j4
+    make -j4 > /dev/null 2>&1
     make install
     cd ..
-    
 fi
 
 # Copy the flint headers
