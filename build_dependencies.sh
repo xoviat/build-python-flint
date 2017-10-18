@@ -25,8 +25,6 @@ if [ -n "$IS_OSX" ]; then
 else
     local PLATFORM_ARGS=--enable-fat
 
-    build_github fredrik-johansson/arb 2.11.1
-
     wget http://mpir.org/mpir-2.7.0.tar.bz2
     tar -xf mpir-2.7.0.tar.bz2
     cd mpir-2.7.0
@@ -37,6 +35,7 @@ else
 
     build_simple mpfr 3.1.4 http://www.mpfr.org/mpfr-3.1.4/
     build_simple flint 2.5.2 http://flintlib.org/
+    build_github fredrik-johansson/arb 2.11.1
 fi
 
 # Copy the flint headers
