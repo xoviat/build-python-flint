@@ -21,6 +21,7 @@ function build_github {
 }
 
 if [ -n "$IS_OSX" ]; then
+    brew update
     HOMEBREW_NO_AUTO_UPDATE=1 brew install homebrew/science/arb
 else
     local PLATFORM_ARGS=--enable-fat
