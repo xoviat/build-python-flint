@@ -4,7 +4,9 @@ set -e -x
 
 if [ -n "$IS_OSX" ]; then
     brew update
-    HOMEBREW_NO_AUTO_UPDATE=1 brew install homebrew/science/arb
+    brew install gcc homebrew/science/arb
+    export CC=gcc
+    export CXX=gcc
 else
     local PLATFORM_ARGS=--enable-fat
     
