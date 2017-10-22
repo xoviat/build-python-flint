@@ -25,7 +25,8 @@ function pre_build {
     # Runs in the root directory of this repository.
     if [ -n "$IS_OSX" ]; then
         brew update
-        brew install gcc homebrew/science/arb
+        brew install -v gcc
+        brew install -v homebrew/science/arb
         export CC=gcc
         export CXX=gcc
     else
