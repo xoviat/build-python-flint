@@ -45,6 +45,7 @@ function pre_build {
 
     # Copy the flint headers
     cp /usr/local/include/flint/*.h /usr/local/include
+    type /usr/local/include/config.h
 }
 
 function run_tests {
