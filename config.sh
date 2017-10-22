@@ -48,7 +48,7 @@ function pre_build {
     if [ -n "$IS_OSX" ]; then
         rm /usr/local/include/config.h
         cp ./osx_config.h /usr/local/include/config.h
-    if
+    fi
 }
 
 function run_tests {
