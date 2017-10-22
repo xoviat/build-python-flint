@@ -55,8 +55,7 @@ matrix:
         - MB_PYTHON_VERSION=3.6
         - PLAT=i686
     - os: osx
-      language: c
-      compiler: clang
+      language: generic
       env:
         - MB_PYTHON_VERSION=2.7
     - os: osx
