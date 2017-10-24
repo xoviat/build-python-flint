@@ -45,10 +45,6 @@ function pre_build {
 
     # Copy the flint headers
     cp /usr/local/include/flint/*.h /usr/local/include
-    if [ -n "$IS_OSX" ]; then
-        rm /usr/local/include/config.h
-        cp ./osx_config.h /usr/local/include/config.h
-    fi
 }
 
 function run_tests {
