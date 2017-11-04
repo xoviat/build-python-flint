@@ -33,7 +33,7 @@ build_script:
       rm -r -Force vcpkg
 
   - ps: |
-      vcpkg remove --outdated
+      vcpkg remove --outdated --recurse
       If ($env:PLATFORM -eq "x64") {
           vcpkg install arb:x64-windows-static
       } Else {
