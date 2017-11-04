@@ -27,6 +27,8 @@ build_script:
   - ps: |
       cd C:\Tools\vcpkg
       git pull -q
+      git clean -dfx
+      .\bootstrap.ps1
       cd $env:APPVEYOR_BUILD_FOLDER
 
   - ps: |
