@@ -25,12 +25,9 @@ build_script:
   - git submodule update --init
   
   - ps: |
-      git clone -q --branch=arblib https://github.com/xoviat/vcpkg.git
-      cd vcpkg
-      rm -r -Force C:\Tools\vcpkg\ports
-      cp -r ports C:\Tools\vcpkg
-      cd ..
-      rm -r -Force vcpkg
+      cd C:\Tools\vcpkg
+      git pull -q
+      cd $env:APPVEYOR_BUILD_FOLDER
 
   - ps: |
       vcpkg remove --outdated --recurse
