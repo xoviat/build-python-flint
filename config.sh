@@ -10,7 +10,7 @@ function pre_build {
         export CC=gcc
         export CXX=gcc
     else
-        yum install -y gmp-devel 
+        build_simple gmp 6.1.2 https://gmplib.org/download/gmp/ tar.lz
         build_simple mpfr 3.1.4 http://www.mpfr.org/mpfr-3.1.4/
         build_simple flint 2.5.2 http://flintlib.org/
         build_github fredrik-johansson/arb 2.11.1
