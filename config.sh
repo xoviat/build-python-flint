@@ -10,7 +10,7 @@ function pre_build {
         export CC=gcc
         export CXX=gcc
     else
-        build_simple gmp 6.1.2 https://gmplib.org/download/gmp/ tar.lz
+        build_github z-classic/libgmp aece03c7b6967f91f3efdac8c673f55adff53ab1
         build_simple mpfr 3.1.4 http://www.mpfr.org/mpfr-3.1.4/
         build_simple flint 2.5.2 http://flintlib.org/
         build_github fredrik-johansson/arb 2.11.1
