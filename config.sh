@@ -8,7 +8,7 @@ function pre_build {
         brew update
         brew install homebrew/science/arb
     else
-        build_github z-classic/libgmp aece03c7b6967f91f3efdac8c673f55adff53ab1
+        build_github ShiftMediaProject/gmp 6.1.2-4
         build_simple mpfr 3.1.4 http://www.mpfr.org/mpfr-3.1.4/
         build_simple flint 2.5.2 http://flintlib.org/
         build_github fredrik-johansson/arb 2.11.1
