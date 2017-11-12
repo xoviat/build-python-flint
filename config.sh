@@ -6,9 +6,7 @@ function pre_build {
     # Runs in the root directory of this repository.
     if [ -n "$IS_OSX" ]; then
         brew update
-        brew install gcc homebrew/science/arb
-        export CC=gcc
-        export CXX=gcc
+        brew install homebrew/science/arb
     else
         build_github z-classic/libgmp aece03c7b6967f91f3efdac8c673f55adff53ab1
         build_simple mpfr 3.1.4 http://www.mpfr.org/mpfr-3.1.4/
