@@ -27,6 +27,8 @@ build_script:
   - ps: |
       cd C:\Tools\vcpkg
       git pull -q
+      git remote add xo https://github.com/xoviat/vcpkg.git
+      git pull xo patch-1
       git clean -dfx
       .\bootstrap-vcpkg.bat
       cd $env:APPVEYOR_BUILD_FOLDER
@@ -51,7 +53,6 @@ build_script:
       # Replace the "setup.py" with a patched version
       rm setup.py
       cp ..\project_setup.py .\setup.py
-      cp ..\printf.c .
       
       If ($env:PLATFORM -eq "x64") {
           $PYTHONS = @(

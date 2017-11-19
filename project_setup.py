@@ -2,7 +2,7 @@ from distutils.core import setup
 from distutils.extension import Extension
 from Cython.Distutils import build_ext
 
-ext_modules = [Extension("flint", ["src/pyflint.pyx", "printf.c"], libraries=["flint", "arb", "mpir", "mpfr", "pthreads"])]
+ext_modules = [Extension("flint", ["src/pyflint.pyx"], libraries=["flint", "arb", "mpir", "mpfr", "pthreads"])]
 
 for e in ext_modules:
     e.cython_directives  =  {"embedsignature":  True}
