@@ -27,8 +27,6 @@ build_script:
   - ps: |
       cd C:\Tools\vcpkg
       git pull -q
-      git remote add xo https://github.com/xoviat/vcpkg.git
-      git pull xo patch-1
       git clean -dfx
       .\bootstrap-vcpkg.bat
       cd $env:APPVEYOR_BUILD_FOLDER
