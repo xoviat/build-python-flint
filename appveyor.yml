@@ -53,16 +53,16 @@ build_script:
               ("C:\\Python36-x64")
           )
           
-          $VCPKG_INCLUDE_DIR = "C:\\Tools\\vcpkg\\installed\\x64-windows-static\\include"
-          $VCPKG_LIBRARY_DIR = "C:\\Tools\\vcpkg\\installed\\x64-windows-static\\lib"
+          $VCPKG_INCLUDE_DIR = "C:\\Tools\\vcpkg\\installed\\x64-windows\\include"
+          $VCPKG_LIBRARY_DIR = "C:\\Tools\\vcpkg\\installed\\x64-windows\\lib"
       } Else {
           $PYTHONS = @(
               ("C:\\Python35"),
               ("C:\\Python36")
           )
           
-          $VCPKG_INCLUDE_DIR = "C:\\Tools\\vcpkg\\installed\\x86-windows-static\\include"
-          $VCPKG_LIBRARY_DIR = "C:\\Tools\\vcpkg\\installed\\x86-windows-static\\lib"
+          $VCPKG_INCLUDE_DIR = "C:\\Tools\\vcpkg\\installed\\x86-windows\\include"
+          $VCPKG_LIBRARY_DIR = "C:\\Tools\\vcpkg\\installed\\x86-windows\\lib"
       }
 
       $VCPKG_LIBRARY_DIR = "$VCPKG_LIBRARY_DIR;$VCPKG_LIBRARY_DIR\\manual-link"
