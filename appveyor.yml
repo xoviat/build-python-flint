@@ -2,6 +2,11 @@ version: 1.0.{build}
 build:
   verbosity: minimal
 
+branches:
+  # whitelist
+  only:
+    - master
+
 image: Visual Studio 2017
 
 environment:
