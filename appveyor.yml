@@ -47,10 +47,6 @@ build_script:
   - ps: |
       cd python-flint
       
-      # Replace the "setup.py" with a patched version
-      rm setup.py
-      cp ..\project_setup.py .\setup.py
-      
       If ($env:PLATFORM -eq "x64") {
           $PYTHONS = @(
               ("C:\\Python35-x64"),
